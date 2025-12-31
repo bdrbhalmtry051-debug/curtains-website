@@ -17,7 +17,7 @@ body {
   background: var(--light);
   color: var(--dark);
   line-height: 1.7;
-  padding-top: 120px;
+  padding-top: 20px;
 }
 
 html {
@@ -29,20 +29,20 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #fff;
-  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  box-shadow: 0 6px 10px rgba(0,0,0,.08);
+  
   z-index: 1000;
 }
 
 .nav-center {
   text-align: center;
-  padding: 15px;
+  padding: 0;
 }
 
 .logo {
-  font-size: 26px;
+  font-size: 16px;
   color: var(--primary);
-  margin-bottom: 10px;
+  margin-bottom: 3px;
 }
 
 .menu {
@@ -60,26 +60,30 @@ html {
 
 /* ===== Hero ===== */
 .hero {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   padding: 40px 20px;
+  /*
+  
   background: linear-gradient(
     rgba(90,45,130,.85),
     rgba(62,29,92,.85)
   ), url("../assets/images/hero.jpg") center/cover;
-  border-radius: 25px;
+  */
+  border-radius: 0;
   text-align: center;
-  color: #fff;
+  color: blue;
 }
 
 .hero-content {
-  max-width: 500px;
+  max-width: 1100px;
   margin: auto;
+  padding: 0;
 }
 
 .hero h2 {
-  font-size: 26px;
-  margin-bottom: 10px;
+  font-size: 15px;
+  margin-bottom: 5px;
 }
 
 .hero p {
@@ -89,7 +93,7 @@ html {
 
 /* ===== WhatsApp Button ===== */
 .whatsapp-btn {
-  margin-top: 15px;
+  margin-top: 0;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -97,25 +101,26 @@ html {
   color: #fff;
   padding: 12px 22px;
   border-radius: 50px;
-  font-size: 14px;
+  font-size: 10px;
   text-decoration: none;
 }
 
 /* ===== Sections ===== */
 section {
-  padding: 50px 20px;
+  padding: 0 ;
 }
 
 .container {
   max-width: 1100px;
   margin: auto;
+  padding: 0;
 }
 
 .section-title {
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   color: var(--primary);
-  margin-bottom: 15px;
+  margin-top: 0;
 }
 
 .section-text {
@@ -126,39 +131,142 @@ section {
 
 /* ===== Services ===== */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  color: red;
+  display: flex;
   gap: 15px;
-  margin-top: 25px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: auto;
+/*مرير افقي للجوال*/
+  padding: 10px 0;
 }
+
+.services-grid::-webkit-scrollbar {
+  display: none;
+}
+
 
 .service-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
+  min-width: 40px;
+  padding: 2px 2px;
+  background: rgba(255, 255, 255, 0.007);
+  border-radius: 16px;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(0,0,0,.08);
+  font-size: 14px;
+  font-weight: 300;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+  white-space: nowrap;
 }
 
+/* حركة خفيفة */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.15);
+}
+
+/* للجوال */
+@media (max-width: 768px) {
+  .service-card {
+    min-width: 80px;
+    font-size: 10px;
+  }
+}
 /* ===== Gallery ===== */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 15px;
-  margin-top: 25px;
+  gap: 5px;
+  margin-top: 0;
 }
 
 .gallery-grid img {
-  width: 100%;
+  width: 40%;
   aspect-ratio: 1 / 1;      /* توحيد المقاس */
   object-fit: cover;        /* بدون تشويه */
-  border-radius: 12px;
+  border-radius: 20px;
 }
 
 /* ===== Footer ===== */
 .footer {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   background: #fff;
-  font-size: 14px;
+  font-size: 4px;
+}
+
+.sub-title {
+  text-align: center;
+  color: var(--primary);
+  margin: 10px 0 5px;
+}
+
+/* السلايدر */
+.slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 30s linear infinite;
+}
+
+.slider:hover .slider-track {
+  animation-play-state: paused;
+}
+
+/* صور وفيديو */
+.slider-track img,
+.slider-track video {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(90,45,130,.25);
+  transition: all .4s ease;
+}
+
+/* تأثير إضاءة فاخر */
+.slider-track img:hover,
+.slider-track video:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 20px rgba(201,162,77,.8),
+    0 25px 40px rgba(0,0,0,.3);
+}
+
+/* الحركة */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* الجوال */
+@media (max-width: 768px) {
+  .slider-track img,
+  .slider-track video {
+    width: 200px;
+    height: 140px;
+  }
+}
+
+/* نافذة العرض */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#lightbox img,
+#lightbox video {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 20px;
 }
