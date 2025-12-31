@@ -270,3 +270,83 @@ section {
   max-height: 90%;
   border-radius: 20px;
 }
+
+
+.gallery {
+  padding: 20px 0;
+}
+
+.section-title {
+  text-align: center;
+  color: #6b2ca0;
+  margin-bottom: 5px;
+}
+
+.sub-title {
+  color: #6b2ca0;
+  margin: 10px 10px 5px;
+}
+
+.slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  gap: 12px;
+  animation: scroll 20s linear infinite;
+}
+
+.slider-track img,
+.slider-track video {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+}
+
+/* تأثير فاخر عند المرور */
+.slider-track img:hover,
+.slider-track video:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(128, 0, 255, 0.6);
+}
+
+/* الحركة من اليمين لليسار */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* للجوال */
+@media (max-width: 768px) {
+  .slider-track img,
+  .slider-track video {
+    width: 140px;
+    height: 100px;
+  }
+}
+
+.media-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.media-modal img,
+.media-modal video {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 18px;
+}
