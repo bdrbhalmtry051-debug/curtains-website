@@ -49,3 +49,19 @@ function closeMedia() {
   video.pause();
   box.style.display = "none";
 }
+
+function openImage(src) {
+  const modal = document.createElement("div");
+  modal.className = "media-modal";
+  modal.innerHTML = `<img src="${src}">`;
+  modal.onclick = () => modal.remove();
+  document.body.appendChild(modal);
+}
+
+function openVideo(src) {
+  const modal = document.createElement("div");
+  modal.className = "media-modal";
+  modal.innerHTML = `<video src="${src}" controls autoplay></video>`;
+  modal.onclick = () => modal.remove();
+  document.body.appendChild(modal);
+}
