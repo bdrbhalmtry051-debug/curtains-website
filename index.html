@@ -45,16 +45,69 @@
   </div>
 </section>
 
-<!-- About -->
-<section id="about" class="about">
-  <div class="container">
-    <h2 class="section-title">من نحن</h2>
-    <p class="section-text">
-      نحن متخصصون في تفصيل وتوريد الستائر بأسلوب كلاسيكي فاخر،
-      نعتني بأدق التفاصيل لنمنح مساحتك لمسة راقية.
-    </p>
+<!-- Gallery -->
+<section id="gallery" class="gallery">
+  <!-- مسار الصور -->
+  <h3 class="sub-title">صور</h3>
+  <div class="slider">
+    <div class="slider-track">
+      <img src="assets/images/g1.jpg" onclick="openMedia(this.src, 'image')">
+      <img src="assets/images/g2.jpg" onclick="openMedia(this.src, 'image')">
+      <img src="assets/images/g3.jpg" onclick="openMedia(this.src, 'image')">
+      <img src="assets/images/g4.jpg" onclick="openMedia(this.src, 'image')">
+      <img src="assets/images/g5.jpeg" onclick="openMedia(this.src, 'image')">
+      <img src="assets/images/g6.jpeg" onclick="openMedia(this.src, 'image')">
+      <img src="assets/images/g7.jpeg" onclick="openMedia(this.src, 'image')">
+      <img src="assets/images/g8.jpeg" onclick="openMedia(this.src, 'image')">
+      <img src="assets/images/g9.jpeg" onclick="openMedia(this.src, 'image')">
+     
+
+      <!-- تكرار -->
+      <!--
+      <img src="assets/images/g1.jpg">
+      <img src="assets/images/g2.jpg">
+      <img src="assets/images/g3.jpg">
+      <img src="assets/images/g4.jpg">
+      <img src="assets/images/g5.jpg">
+      <img src="assets/images/g6.jpg">
+      <img src="assets/images/g7.jpg">
+      <img src="assets/images/g8.jpg">
+      <img src="assets/images/g9.jpg">
+      --> 
+      
+
+    </div>
+  </div>
+
+  <!-- مسار الفيديو -->
+  <h3 class="sub-title">فيديو</h3>
+  <div class="slider">
+    <div class="slider-track">
+      <video src="assets/videos/v1.mp4" muted onclick="openMedia(this.src, 'video')"></video>
+      <video src="assets/videos/v2.mp4" muted onclick="openMedia(this.src, 'video')"></video>
+      <video src="assets/videos/v3.mp4" muted onclick="openMedia(this.src, 'video')"></video>
+      <video src="assets/videos/v4.mp4" muted onclick="openMedia(this.src, 'video')"></video>
+      <video src="assets/videos/v5.mp4" muted onclick="openMedia(this.src, 'video')"></video>
+      <video src="assets/videos/v6.mp4" muted onclick="openMedia(this.src, 'video')"></video>
+
+
+
+      <!-- تكرار -->
+      <!--
+      <video src="assets/videos/v1.mp4" muted></video>
+      <video src="assets/videos/v2.mp4" muted></video>
+       
+      -->
+      
+    </div>
   </div>
 </section>
+
+<!-- نافذة العرض -->
+<div id="lightbox" onclick="closeMedia()">
+  <img id="lightbox-img">
+  <video id="lightbox-video" controls></video>
+</div>
 
 <!-- Services -->
 <section id="services" class="services">
@@ -73,19 +126,17 @@
   </div>
 </section>
 
-<!-- Gallery -->
-<section id="gallery" class="gallery">
+<!-- About -->
+<section id="about" class="about">
   <div class="container">
-    <h2 class="section-title">أعمالنا</h2>
-
-    <div class="gallery-grid">
-      <img src="assets/images/g1.jpg" alt="">
-      <img src="assets/images/g2.jpg" alt="">
-      <img src="assets/images/g3.jpg" alt="">
-      <img src="assets/images/g4.jpg" alt="">
-    </div>
+    <h2 class="section-title">من نحن</h2>
+    <p class="section-text">
+      نحن متخصصون في تفصيل وتوريد الستائر بأسلوب كلاسيكي فاخر،
+      نعتني بأدق التفاصيل لنمنح مساحتك لمسة راقية.
+    </p>
   </div>
 </section>
+
 
 <!-- Contact -->
 <section id="contact" class="contact">
